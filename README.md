@@ -1,6 +1,6 @@
 # Bandwidth Estimator
 
-Small tool for estimating bandwidth for static sites by measuring page weight
+Small tool for estimating bandwidth for static sites on Vercel, by measuring page weight
 and multiplying by number of monthly visitors.
 
 This works using a headless Chromium instance in /api/pageweight.ts.
