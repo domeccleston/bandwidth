@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Input, Button } from "@geist-ui/react";
 import { useForm } from "react-hook-form";
 
-import { formatted } from '../lib/formatted';
+import { formatted } from "../lib/formatted";
 
 import styles from "../styles/Home.module.css";
 
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
   } = useForm<BandwidthForm>();
 
   const [visitors, setVisitors] = useState<null | number>(null);
-  const [pageWeight, setPageWeight] = useState('');
+  const [pageWeight, setPageWeight] = useState("");
   const [bandwidthEstimate, setBandwidthEstimate] = useState<null | number>(
     null
   );
@@ -43,7 +43,9 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Monthly bandwidth estimator</h1>
-      <h4 className={styles.subtitle}>(for marketing sites, not serverless functions)</h4>
+        <h4 className={styles.subtitle}>
+          (for marketing sites, not serverless functions)
+        </h4>
         <form
           className={styles.bandwidthForm}
           onSubmit={handleSubmit(onSubmit)}
@@ -55,7 +57,7 @@ const Home: NextPage = () => {
               pattern: /^[1-9]\d*$/,
             })}
             placeholder="Unique monthly visitors"
-            type={errors.monthlyVisitors ? 'error' : 'default'}
+            type={errors.monthlyVisitors ? "error" : "default"}
           />
           <Input
             className={styles.input}
@@ -65,7 +67,7 @@ const Home: NextPage = () => {
                 /^(?:(ftp|http|https)?:\/\/)?(?:[\w-]+\.)+([a-z]|[A-Z]|[0-9]){2,6}$/i,
             })}
             placeholder="https://yourwebsite.co"
-            type={errors.siteUrl ? 'error' : 'default'}
+            type={errors.siteUrl ? "error" : "default"}
           />
           <Button
             htmlType="submit"
@@ -76,9 +78,11 @@ const Home: NextPage = () => {
             Submit
           </Button>
         </form>
-        {bandwidthEstimate &&
-          <h3 className={styles.estimate}>Estimated bandwidth usage: {formatted(bandwidthEstimate)}.</h3>
-        }
+        {bandwidthEstimate && (
+          <h3 className={styles.estimate}>
+            Estimated bandwidth usage: {formatted(bandwidthEstimate)}.
+          </h3>
+        )}
       </main>
     </div>
   );
