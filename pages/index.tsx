@@ -42,7 +42,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1>Monthly bandwidth estimator</h1>
+        <h1 className={styles.title}>Monthly bandwidth estimator</h1>
         <form
           className={styles.bandwidthForm}
           onSubmit={handleSubmit(onSubmit)}

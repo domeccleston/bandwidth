@@ -19,7 +19,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { url } = req.query as { [key: string]: string };
+  let { url } = req.query as { [key: string]: string };
+  if (!url.startsWith('http')) {
+    url = 'https://' + url;
+  };
   const browser = await chromium.puppeteer.launch({
     args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
     executablePath: await chromium.executablePath,
