@@ -21,7 +21,7 @@ export default async function handler(
 ) {
   const { url } = req.query as { [key: string]: string };
   const browser = await chromium.puppeteer.launch({
-    args: ['--disable-web-security'],
+    args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
     executablePath: await chromium.executablePath,
     defaultViewport: null
   });
