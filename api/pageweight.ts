@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import puppeteer from 'puppeteer';
+import chromium from 'chrome-aws-lambda';
 
 const getPageWeight = () => {
   const pagePerformanceEntry = window.performance.getEntriesByType("navigation")[0] as PerformanceResourceTiming
@@ -20,7 +20,10 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { url } = req.query as { [key: string]: string };
-  const browser = await puppeteer.launch({ defaultViewport: null });
+  const browser = await chromium.puppeteer.launch({
+    executablePath: await chromium.executablePath,
+    defaultViewport: null
+  });
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
   await page.goto(url, {
