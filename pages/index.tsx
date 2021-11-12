@@ -43,6 +43,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Monthly bandwidth estimator</h1>
+      <h4 className={styles.subtitle}>(for marketing sites, not serverless functions)</h4>
         <form
           className={styles.bandwidthForm}
           onSubmit={handleSubmit(onSubmit)}

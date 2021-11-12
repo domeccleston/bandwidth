@@ -19,13 +19,20 @@
 
 .title {
   text-align: center;
+  line-height: 1.2;
+}
+
+.subtitle {
+  opacity: 0.6;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 .bandwidthForm {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 140px;
+  height: 150px;
   justify-content: space-around;
 }
 
@@ -39,6 +46,6 @@
 }
 
 .estimate {
-  padding: 1rem 2rem;
+  padding: 2rem;
   text-align: center;
 }
