@@ -44,7 +44,8 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Monthly bandwidth estimator</h1>
         <h4 className={styles.subtitle}>
-          (for marketing sites, not serverless functions)
+          Do you have a customer who wants to know how much bandwidth their website will consume
+          on Vercel? This can help give an initial estimate.
         </h4>
         <form
           className={styles.bandwidthForm}
